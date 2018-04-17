@@ -2,8 +2,8 @@
 This Docker image, will setup a system so your ember tests can be executed inside the container itself.
 
 ## Supported tags and respective `Dockerfile` links
-+ [`latest` (2.18.2/Dockerfile)](https://github.com/BookerSoftwareInc/emberjs-docker-testing/blob/2.18.2/Dockerfile)
-
++ [`latest` (3.0.0/Dockerfile)](https://github.com/BookerSoftwareInc/emberjs-docker-testing/blob/3.0.0/Dockerfile)
++ [`2.18.2` (2.18.2/Dockerfile)](https://github.com/BookerSoftwareInc/emberjs-docker-testing/blob/2.18.2/Dockerfile)
 ## Run the Image
 
 ```

@@ -2,7 +2,7 @@ FROM node:8.11-stretch
 LABEL maintainer="John Costanzo"
 
 # Environment variables
-ENV EMBER_VERSION 2.18.2
+ENV EMBER_VERSION 3.0.0
 ENV APP_DIR /app
 
 # Install some necessary tools
