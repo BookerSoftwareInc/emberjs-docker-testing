@@ -1,4 +1,4 @@
-FROM node:8.11.1-stretch
+FROM golang:1.9-stretch
 LABEL maintainer="Booker Software"
 
 # Environment variables
@@ -13,6 +13,8 @@ RUN apt-get update -qqy && \
   gnupg wget ca-certificates apt-transport-https && \
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
   echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   apt-get update -qqy && \
   apt-get -qqy install google-chrome-unstable && \
   ln -s /usr/bin/nodejs /usr/bin/node && \
