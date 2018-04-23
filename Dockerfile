@@ -1,5 +1,5 @@
-FROM node:8.11-stretch
-LABEL maintainer="John Costanzo"
+FROM node:8.11.1-stretch
+LABEL maintainer="Booker Software"
 
 # Environment variables
 ENV EMBER_VERSION 3.0.0
