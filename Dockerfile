@@ -1,8 +1,7 @@
-FROM node:8.11.1-stretch
+FROM node:10.17.0-stretch
 LABEL maintainer="Booker Software"
 
 # Environment variables
-ENV EMBER_VERSION 3.0.0
 ENV APP_DIR /app
 
 # Install some necessary tools
@@ -16,7 +15,7 @@ RUN apt-get update -qqy && \
   apt-get update -qqy && \
   apt-get -qqy install google-chrome-unstable && \
   ln -s /usr/bin/nodejs /usr/bin/node && \
-  npm install bower ember-cli@$EMBER_VERSION -g && \
+  npm install bower ember-cli -g && \
   mkdir $APP_DIR && \
   rm -rf /var/lib/apt/lists/*
 
