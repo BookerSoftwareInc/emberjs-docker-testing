@@ -9,6 +9,7 @@ RUN apt-get update -qqy && \
   apt-get -qqy install xvfb fluxbox x11vnc dbus  \
   fontconfig \
   curl \
+  python-dev \
   gnupg wget ca-certificates apt-transport-https && \
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
   echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
