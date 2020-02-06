@@ -17,7 +17,14 @@ RUN apt-get update -qqy && \
   ln -s /usr/bin/nodejs /usr/bin/node && \
   npm install bower ember-cli -g && \
   mkdir $APP_DIR && \
-  rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/* && \
+  git clone https://github.com/facebook/watchman.git && \
+	cd watchman && \
+	git checkout v4.9.0 && \
+	./autogen.sh && \
+	./configure && \
+	make && \
+	make install
 
 COPY entrypoint.sh /entrypoint.sh
 WORKDIR $APP_DIR
