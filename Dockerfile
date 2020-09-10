@@ -1,4 +1,4 @@
-FROM node:10.17.0-stretch
+FROM node:12.18-alpine
 LABEL maintainer="Booker Software"
 
 # Environment variables
@@ -20,12 +20,12 @@ RUN apt-get update -qqy && \
   mkdir $APP_DIR && \
   rm -rf /var/lib/apt/lists/* && \
   git clone https://github.com/facebook/watchman.git && \
-	cd watchman && \
-	git checkout v4.9.0 && \
-	./autogen.sh && \
-	./configure && \
-	make && \
-	make install
+  cd watchman && \
+  git checkout v4.9.0 && \
+  ./autogen.sh && \
+  ./configure && \
+  make && \
+  make install
 
 COPY entrypoint.sh /entrypoint.sh
 WORKDIR $APP_DIR
