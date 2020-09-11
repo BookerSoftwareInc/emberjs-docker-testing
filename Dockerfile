@@ -1,4 +1,4 @@
-FROM node:12.18-alpine
+FROM node:12.18.2-stretch
 LABEL maintainer="Booker Software"
 
 # Environment variables
