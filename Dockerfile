@@ -16,7 +16,7 @@ RUN apt-get update -qqy && \
   apt-get update -qqy && \
   apt-get -qqy install google-chrome-unstable && \
   ln -s /usr/bin/nodejs /usr/bin/node && \
-  npm install bower ember-cli -g && \
+  npm install ember-cli -g && \
   mkdir $APP_DIR && \
   rm -rf /var/lib/apt/lists/* && \
   git clone https://github.com/facebook/watchman.git && \
