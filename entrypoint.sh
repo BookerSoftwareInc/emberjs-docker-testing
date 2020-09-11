@@ -8,10 +8,6 @@ echo "$dt. Starting container..."
 cd $APP_DIR
 echo "App dir: $APP_DIR"
 
-if [ -f bower.json ]; then
-  bower install --allow-root & wait
-fi
-
 if [ -f yarn.lock ]; then
   yarn install & wait
 elif [ -f package-lock.json ]; then

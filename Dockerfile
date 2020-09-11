@@ -1,4 +1,4 @@
-FROM node:10.17.0-stretch
+FROM node:12.18.2-stretch
 LABEL maintainer="Booker Software"
 
 # Environment variables
@@ -16,16 +16,16 @@ RUN apt-get update -qqy && \
   apt-get update -qqy && \
   apt-get -qqy install google-chrome-unstable && \
   ln -s /usr/bin/nodejs /usr/bin/node && \
-  npm install bower ember-cli -g && \
+  npm install ember-cli -g && \
   mkdir $APP_DIR && \
   rm -rf /var/lib/apt/lists/* && \
   git clone https://github.com/facebook/watchman.git && \
-	cd watchman && \
-	git checkout v4.9.0 && \
-	./autogen.sh && \
-	./configure && \
-	make && \
-	make install
+  cd watchman && \
+  git checkout v4.9.0 && \
+  ./autogen.sh && \
+  ./configure && \
+  make && \
+  make install
 
 COPY entrypoint.sh /entrypoint.sh
 WORKDIR $APP_DIR
