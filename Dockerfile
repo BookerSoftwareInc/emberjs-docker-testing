@@ -1,4 +1,4 @@
-FROM node:12.18.2-stretch
+FROM node:19.2-bullseye-slim
 LABEL maintainer="Booker Software"
 
 # Environment variables
@@ -13,7 +13,9 @@ RUN apt-get update -qqy && \
   gnupg wget ca-certificates apt-transport-https && \
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
   echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
+  echo "deb http://ftp.debian.org/debian bullseye-backports main" >> /etc/apt/sources.list && apt-get update && \
   apt-get update -qqy && \
+  apt-get -qqy install -t bullseye-backports curl && \
   apt-get -qqy install google-chrome-unstable && \
   ln -s /usr/bin/nodejs /usr/bin/node && \
   npm install ember-cli -g && \
